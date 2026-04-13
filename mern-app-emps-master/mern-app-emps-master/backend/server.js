@@ -35,7 +35,7 @@ app.use((req, res) => {
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://bloguser:blog123@cluster.mongodb.net/employeeApp"
+      "mongodb+srv://bloguser:blog123@cluster0.utreijp.mongodb.net/?appName=empApp"
     );
     console.log("DB connected");
 
