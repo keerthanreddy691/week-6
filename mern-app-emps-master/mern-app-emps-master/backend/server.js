@@ -27,7 +27,7 @@ app.use(express.json());
 app.use("/emp-api", empRoute);
 
 // Serve frontend (IMPORTANT)
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+//app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
