@@ -22,7 +22,12 @@ function CreateEmp() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEmpObj),
-      });
+        
+      },
+    {
+    credentials: "include"
+  }
+);
 
       if (res.status === 201) {
         //navigate to employees component programatically

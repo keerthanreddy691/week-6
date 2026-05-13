@@ -4,9 +4,10 @@ import { empRoute } from "./API/empApp.js";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import { config } from "dotenv";
+import { connect } from "mongoose";
 const app = express();
-
+config();
 // Fix __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +16,7 @@ const __dirname = path.dirname(__filename);
 app.use(
   cors({
     origin: ["http://localhost:5173"],
+    credentials:true,
   })
 );
 
@@ -34,9 +36,8 @@ app.use((req, res) => {
 // DB connection + server start
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://bloguser:blog123@cluster0.utreijp.mongodb.net/?appName=empApp"
-    );
+        await connect(process.env.DB_URL);
+    
     console.log("DB connected");
 
     const PORT = process.env.PORT || 4000;
