@@ -16,6 +16,7 @@ const __dirname = path.dirname(__filename);
 app.use(
   cors({
     origin: ["http://localhost:5173"],
+    origin: ["https://week-6-4slc.onrender.com"],
     credentials:true,
   })
 );
