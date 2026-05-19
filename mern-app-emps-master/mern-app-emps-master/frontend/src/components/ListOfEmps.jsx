@@ -17,7 +17,7 @@ function ListOfEmps() {
 
   useEffect(() => {
     async function getEmps() {
-      let res = await fetch("http://localhost:4000/emp-api/employees",{
+      let res = await fetch("https://week-6-4slc.onrender.com/emp-api/employees",{
     credentials: "include"
   });
       if (res.status === 200) {
