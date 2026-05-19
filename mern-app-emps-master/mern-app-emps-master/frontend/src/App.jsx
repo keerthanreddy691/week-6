@@ -5,7 +5,7 @@ import CreateEmp from "./components/CreateEmp";
 import ListOfEmps from "./components/ListOfEmps";
 import Employee from './components/Employee'
 import EditEmployee from './components/EditEmployee'
-
+import DeleteEmp from './components/DeleteEmp'
 function App() {
   const routerObj = createBrowserRouter([
     {
