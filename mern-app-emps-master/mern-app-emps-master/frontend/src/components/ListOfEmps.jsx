@@ -14,7 +14,9 @@ function ListOfEmps() {
     //navigate to /employee along with selected emp obj
     navigate("/edit-emp",{state:empObj});
   };
-
+const gotoDeleteEmployee = (empObj) => {
+  navigate("/delete-emp", { state: empObj });
+};
   useEffect(() => {
     async function getEmps() {
       let res = await fetch("https://emp-backend-zdvn.onrender.com/emp-api/employees",{
@@ -43,9 +45,12 @@ function ListOfEmps() {
               </button>
               <button onClick={()=>gotoEditEmpoyee(empObj)} className="bg-yellow-600 p-2 rounded-2xl text-white">
                 Edit
-              </button>
-              <button className="bg-red-600 p-2 rounded-2xl text-white">Delete</button>
-            </div>
+              <button
+  className="bg-red-600 p-2 rounded-2xl text-white"
+  onClick={() => gotoDeleteEmployee(empObj)}
+>
+  Delete
+</button>
           </div>
         ))}
       </div>
