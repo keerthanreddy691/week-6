@@ -28,7 +28,7 @@ function EditEmployee() {
   const saveModifiedEmp = async (modifiedEmp) => {
     // console.log(modifiedEmp);
     //make HTTP PUT req
-    const res = await axios.put(`http://localhost:4000/emp-api/employees/${state._id}`, modifiedEmp,{
+    const res = await axios.put(`https://week-6-4slc.onrender.com/emp-api/employees/${state._id}`, modifiedEmp,{
       withCredentials: true
     });
     if (res.status === 200) {
